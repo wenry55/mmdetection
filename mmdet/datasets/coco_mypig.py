@@ -18,9 +18,25 @@ from .custom import CustomDataset
 
 
 @DATASETS.register_module()
-class CocoPigDataset(CustomDataset):
+#class CocoMyPigDataset(CustomDataset):
+class CocoMyPigDataset(CustomDataset):
+    CLASSES = ('pig', )
 
-    CLASSES = ('Pig',)
+    def __init__(self,
+                 ann_file,
+                 pipeline,
+                 classes=None,
+                 data_root=None,
+                 img_prefix='',
+                 seg_prefix=None,
+                 proposal_file=None,
+                 test_mode=False,
+                 filter_empty_gt=True,
+                 dataset=None,
+                 dynamic_scale=None):
+        super().__init__(ann_file, pipeline, classes, data_root, img_prefix,
+                         seg_prefix, proposal_file, test_mode, filter_empty_gt)
+        pass
 
     def load_annotations(self, ann_file):
         """Load annotation from COCO style annotation file.

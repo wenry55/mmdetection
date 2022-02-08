@@ -18,9 +18,9 @@ from .custom import CustomDataset
 
 
 @DATASETS.register_module()
-class CocoPigDataset(CustomDataset):
+class CocoMyCowDataset(CustomDataset):
 
-    CLASSES = ('Pig',)
+    CLASSES = ('Cow', 'Calf', )
 
     def load_annotations(self, ann_file):
         """Load annotation from COCO style annotation file.

@@ -97,7 +97,7 @@ def convert_balloon_to_coco(ann_file, out_file, image_prefix):
     coco_format_json = dict(
         images=images,
         annotations=annotations,
-        categories=[{'id':0, 'name': 'balloon'}])
+        categories=[{'id':0, 'name': 'Pig'}])
     mmcv.dump(coco_format_json, out_file)
 
 
